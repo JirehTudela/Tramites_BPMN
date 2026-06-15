@@ -405,8 +405,9 @@ fastify.put('/api/graduaciones/:expediente/resolucion', async (request, reply) =
 // Iniciar servidor
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000, host: '0.0.0.0' })
-    console.log('🚀 Servidor corriendo en http://localhost:3000')
+    const port = process.env.PORT || 3000;
+    await fastify.listen({ port: port, host: '0.0.0.0' })
+    console.log(`🚀 Servidor corriendo en el puerto ${port}`)
     console.log('📁 Datos guardados en archivos JSON reales')
   } catch (err) {
     fastify.log.error(err)
