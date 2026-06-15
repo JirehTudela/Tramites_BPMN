@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Trámites UMSA</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏛️ Sistema de Gestión de Trámites - UMSA</h1>
+            <p>Facultad de Informática · Cambio de Mención · Modalidad de Graduación</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="cambio">🔄 Cambio de Mención</button>
+            <button class="tab-btn" data-tab="graduacion">🎓 Modalidad de Graduación</button>
+            <button class="tab-btn" data-tab="consultas">🔍 Consultar Solicitudes</button>
+        </div>
+
+        <!-- ============ MÓDULO CAMBIO DE MENCIÓN ============ -->
+        <div id="cambio" class="tab-content active">
+            <h2>🔄 Solicitar Cambio de Mención</h2>
+            
+            <div class="form-card">
+                <h3>📝 Nueva Solicitud</h3>
+                <form id="formCambioMencion">
+                    <div class="form-group">
+                        <label>CI del Estudiante *</label>
+                        <input type="text" id="ciEstudiante" placeholder="Ej: 12345678" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mención Destino *</label>
+                        <select id="mencionDestino" required>
+                            <option value="">Seleccione...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Carta de Motivo * (mínimo 50 caracteres)</label>
+                        <textarea id="cartaMotivo" rows="5" placeholder="Explique las razones de su solicitud de cambio de mención..." required></textarea>
+                        <small id="contadorCaracteres">0/50 caracteres mínimos</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">📤 Enviar Solicitud</button>
+                </form>
+            </div>
+
+            <div class="form-card">
+                <h3>✅ Aprobar/Rechazar Solicitud (Kardex)</h3>
+                <div class="form-group">
+                    <label>ID de Solicitud</label>
+                    <input type="text" id="cambioIdActualizar" placeholder="Ej: CM-2026-001">
+                </div>
+                <div class="form-group">
+                    <label>Acción</label>
+                    <select id="cambioAccion">
+                        <option value="aprobado">✅ Aprobar</option>
+                        <option value="rechazado">❌ Rechazar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Observación (opcional)</label>
+                    <input type="text" id="cambioObservacion" placeholder="Motivo del rechazo o comentario">
+                </div>
+                <button id="btnActualizarCambio" class="btn btn-secondary">✏️ Actualizar Estado</button>
+            </div>
+        </div>
+
+        <!-- ============ MÓDULO GRADUACIÓN ============ -->
+        <div id="graduacion" class="tab-content">
+            <h2>🎓 Solicitar Modalidad de Graduación</h2>
+            
+            <div class="form-card">
+                <h3>📄 Solicitud de Perfil (9no Semestre)</h3>
+                <form id="formGraduacion">
+                    <div class="form-group">
+                        <label>CI del Estudiante *</label>
+                        <input type="text" id="graCi" placeholder="Ej: 87654321" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Modalidad *</label>
+                        <select id="graModalidad" required>
+                            <option value="tesis">📖 Tesis de Grado</option>
+                            <option value="proyecto">💻 Proyecto de Grado</option>
+                            <option value="excelencia">⭐ Excelencia Académica</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Documentos (simulados) *</label>
+                        <div class="doc-checkboxes">
+                            <label><input type="checkbox" class="doc-check" value="perfil_pdf"> Perfil de proyecto (PDF)</label>
+                            <label><input type="checkbox" class="doc-check" value="aval_docente"> Aval de docente (PDF)</label>
+                            <label><input type="checkbox" class="doc-check" value="aval_tutor"> Aval de tutor (PDF)</label>
+                            <label><input type="checkbox" class="doc-check" value="originalidad"> Aval de originalidad (PDF)</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">📤 Solicitar Perfil</button>
+                </form>
+            </div>
+
+            <div class="form-card">
+                <h3>📋 Registrar Evaluación (Docente/Tutor/Biblioteca)</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Expediente</label>
+                        <input type="text" id="evalExpediente" placeholder="Ej: GR-2026-001">
+                    </div>
+                    <div class="form-group">
+                        <label>Rol</label>
+                        <select id="evalRol">
+                            <option value="docente">👨‍🏫 Docente de Taller</option>
+                            <option value="tutor">👩‍🏫 Tutor</option>
+                            <option value="biblioteca">📚 Biblioteca</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Estado</label>
+                        <select id="evalEstado">
+                            <option value="aprobado">✅ Aprobar</option>
+                            <option value="rechazado">❌ Rechazar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Observación</label>
+                    <input type="text" id="evalObservacion" placeholder="Motivo del rechazo (si aplica)">
+                </div>
+                <button id="btnRegistrarEvaluacion" class="btn btn-secondary">📝 Registrar Evaluación</button>
+            </div>
+
+            <div class="form-card">
+                <h3>📑 Subir Conclusión (10mo Semestre) y Emitir Resolución</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Expediente</label>
+                        <input type="text" id="conclusionExpediente" placeholder="Ej: GR-2026-001">
+                    </div>
+                    <div class="form-group">
+                        <label>Documento Conclusión</label>
+                        <input type="text" id="documentoConclusion" placeholder="nombre_documento.pdf">
+                    </div>
+                    <button id="btnSubirConclusion" class="btn btn-secondary">📤 Subir Conclusión</button>
+                </div>
+                <div class="form-row" style="margin-top: 10px;">
+                    <div class="form-group">
+                        <label>Resolución</label>
+                        <input type="text" id="resolucionNumero" placeholder="Ej: RES-2026-001">
+                    </div>
+                    <button id="btnEmitirResolucion" class="btn btn-success">🎓 Emitir Resolución</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ CONSULTAS ============ -->
+        <div id="consultas" class="tab-content">
+            <h2>🔍 Consultar Solicitudes</h2>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Buscar por CI</label>
+                    <input type="text" id="buscarCi" placeholder="CI del estudiante">
+                </div>
+                <div class="form-group">
+                    <label>Buscar por ID/Expediente</label>
+                    <input type="text" id="buscarId" placeholder="ID o Expediente">
+                </div>
+                <button id="btnBuscar" class="btn btn-primary">🔎 Buscar</button>
+            </div>
+
+            <div id="resultadosConsulta">
+                <h3>📋 Resultados</h3>
+                <pre id="resultadosJson" class="json-view">Seleccione una búsqueda</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/cambiosMencion.js"></script>
+    <script src="/js/graduaciones.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

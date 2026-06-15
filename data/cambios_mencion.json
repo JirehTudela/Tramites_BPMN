@@ -1,0 +1,32 @@
+{
+  "solicitudes": [
+    {
+      "id": "CM-2026-001",
+      "fecha_solicitud": "2026-06-06T07:19:56.843Z",
+      "estudiante_ci": "12345678",
+      "matricula": "202100123",
+      "nombre": "Ana María Choque",
+      "mencion_origen": "Desarrollo de software e innovación tecnológica",
+      "mencion_destino": "IA y ciencia de datos",
+      "carta_motivo": "solicito el cambio de mi mención debido a los problemas que he tenido con los materiales y materias",
+      "estado": "aprobado",
+      "historial": [
+        {
+          "fecha": "2026-06-06T07:19:56.843Z",
+          "estado": "solicitado",
+          "observacion": "Solicitud creada por estudiante"
+        },
+        {
+          "fecha": "2026-06-06T07:20:21.155Z",
+          "estado": "aprobado",
+          "observacion": "Solicitud aprobado por Kardex"
+        }
+      ],
+      "respuesta_kardex": {
+        "fecha": "2026-06-06T07:20:21.155Z",
+        "estado": "aprobado",
+        "observacion": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "estudiantes": [
+    {
+      "ci": "12345678",
+      "matricula": "202100123",
+      "nombre": "Ana María Choque",
+      "carrera": "Informática",
+      "mencion_actual": "IA y ciencia de datos",
+      "semestre": 8,
+      "promedio": 85.5
+    },
+    {
+      "ci": "87654321",
+      "matricula": "202100456",
+      "nombre": "Luis Fernando Mamani",
+      "carrera": "Informática",
+      "mencion_actual": "Seguridad de la información",
+      "semestre": 9,
+      "promedio": 72.3
+    },
+    {
+      "ci": "11223344",
+      "matricula": "202200789",
+      "nombre": "Carla Mendoza",
+      "carrera": "Informática",
+      "mencion_actual": "IA y ciencia de datos",
+      "semestre": 7,
+      "promedio": 91
+    }
+  ]
+}

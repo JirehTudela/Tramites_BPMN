@@ -1,0 +1,78 @@
+{
+  "solicitudes": [
+    {
+      "expediente": "GR-2026-001",
+      "fecha_inicio": "2026-06-06T07:21:16.298Z",
+      "estudiante_ci": "87654321",
+      "matricula": "202100456",
+      "nombre": "Luis Fernando Mamani",
+      "mencion": "Seguridad de la información",
+      "modalidad": "tesis",
+      "semestre": 9,
+      "estado": "graduado",
+      "documentos_perfil": {
+        "perfil_pdf": "perfil_pdf_87654321.pdf",
+        "aval_docente": "aval_docente_87654321.pdf",
+        "aval_tutor": "aval_tutor_87654321.pdf",
+        "originalidad": "originalidad_87654321.pdf"
+      },
+      "evaluaciones": {
+        "docente": {
+          "estado": "aprobado",
+          "observacion": null,
+          "fecha": "2026-06-06T07:21:46.106Z"
+        },
+        "tutor": {
+          "estado": "aprobado",
+          "observacion": null,
+          "fecha": "2026-06-06T07:23:15.028Z"
+        },
+        "biblioteca": {
+          "estado": "aprobado",
+          "observacion": null,
+          "fecha": "2026-06-06T07:23:21.278Z"
+        }
+      },
+      "documento_conclusion": "aprobacion.pdf",
+      "resolucion": "RES-2026-001",
+      "fecha_graduacion": "2026-06-06T07:25:13.602Z",
+      "historial": [
+        {
+          "fecha": "2026-06-06T07:21:16.298Z",
+          "estado": "perfil_en_revision",
+          "observacion": "Solicitud de perfil creada"
+        },
+        {
+          "fecha": "2026-06-06T07:21:46.106Z",
+          "estado": "evaluacion_docente",
+          "observacion": "docente: aprobado"
+        },
+        {
+          "fecha": "2026-06-06T07:23:15.028Z",
+          "estado": "evaluacion_tutor",
+          "observacion": "tutor: aprobado"
+        },
+        {
+          "fecha": "2026-06-06T07:23:21.278Z",
+          "estado": "evaluacion_biblioteca",
+          "observacion": "biblioteca: aprobado"
+        },
+        {
+          "fecha": "2026-06-06T07:23:21.278Z",
+          "estado": "perfil_aprobado",
+          "observacion": "Todas las evaluaciones aprobadas"
+        },
+        {
+          "fecha": "2026-06-06T07:23:25.158Z",
+          "estado": "conclusion_en_revision",
+          "observacion": "Documento de conclusión subido"
+        },
+        {
+          "fecha": "2026-06-06T07:25:13.602Z",
+          "estado": "graduado",
+          "observacion": "Resolución emitida: RES-2026-001"
+        }
+      ]
+    }
+  ]
+}
